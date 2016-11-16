@@ -1,7 +1,10 @@
 package com.buchzulang.kurrency.Fragments;
 
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,11 +13,13 @@ import android.widget.Button;
 
 import com.buchzulang.kurrency.Activities.MainActivity;
 import com.buchzulang.kurrency.R;
+import com.buchzulang.kurrency.Tools.DataService;
 
 public class StartFragment extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private final int REQ_CODE_INTERNET = 46;
     private String mParam1;
     private String mParam2;
 
@@ -53,8 +58,32 @@ public class StartFragment extends Fragment {
                 MainActivity.getMainActivity().loadOperationScreen();
             }
         });
+
+
+        downloadCurrencyData();
         
         return v;
     }
+
+
+    private void downloadCurrencyData(){
+        if (ActivityCompat.checkSelfPermission( MainActivity.getMainActivity().getApplicationContext(),
+                                                Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED){
+            DataService.getInstance().download();
+        } else {
+            ActivityCompat.requestPermissions(MainActivity.getMainActivity(),new  String[] {Manifest.permission.INTERNET}, REQ_CODE_INTERNET);
+        }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if(requestCode == REQ_CODE_INTERNET && grantResults.length >0 &&grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            DataService.getInstance().download();
+        }
+    }
+
 
 }

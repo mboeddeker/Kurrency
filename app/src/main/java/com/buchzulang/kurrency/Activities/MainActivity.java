@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import com.buchzulang.kurrency.Fragments.StartFragment;
 import com.buchzulang.kurrency.R;
+import com.buchzulang.kurrency.Tools.CurrencyModel;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,8 +21,9 @@ public class MainActivity extends AppCompatActivity {
     public static void setMainActivity(MainActivity mainActivity) {
         MainActivity.mainActivity = mainActivity;
     }
-
     //  =   =   =   =   =   =   =   =   =   =   =   =
+
+    public CurrencyModel currencyModel = new CurrencyModel();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
