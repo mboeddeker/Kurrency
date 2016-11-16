@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/gardient_backgroud"
     tools:context="com.buchzulang.kurrency.Fragments.OperationFragment">
-
+    <!-- -->
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -17,6 +17,7 @@
             android:text="@string/app_name"
             android:textColor="@color/white"
             android:textSize="18sp"
+
             android:textAlignment="center"
             android:layout_gravity="center"
             />
@@ -25,13 +26,13 @@
 
     <LinearLayout
         android:orientation="vertical"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="35dp"
         android:layout_width="match_parent"
-        android:layout_height="50dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="40dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_gravity="center_horizontal"
@@ -42,7 +43,7 @@
                 android:layout_height="30dp"
                 android:id="@+id/img_TopFlag"
                 android:layout_gravity="center_vertical"
-                android:src="@drawable/eu" />
+                android:src="@drawable/us" />
 
             <Spinner
                 android:layout_width="90dp"
@@ -68,27 +69,282 @@
                 android:layout_height="wrap_content"
                 android:text="$"
                 android:textSize="15sp"
-                android:textColor="@color/white"
-                />
+                android:textColor="@color/white"/>
 
 
-        </LinearLayout>
+        </LinearLayout> <!-- TOP FLAG END -->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:orientation="horizontal"
+            android:background="@color/clear">
 
             <View
-                android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
-                android:layout_height="10dp"
-                android:background="#501010" />
+                android:layout_height="0.8dp"
+                android:layout_marginRight="12dp"
+                android:background="@color/white"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:id="@+id/btn_currencyChange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon"
+                android:layout_weight="0"
+                android:background="@color/clear"/>
+
+
+        </LinearLayout> <!-- MIDDLE END -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:id="@+id/img_BottomFlag"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/eu" />
+
+            <Spinner
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:id="@+id/spinner_BottomFlag" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/txt_BottomFlag"
+                android:text="111.76"
+                android:textColor="@color/white"
+                android:textSize="35sp"
+                android:layout_marginRight="6dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                android:textAlignment="textEnd" />
+            <TextView
+                android:id="@+id/currencySymbolBottom"
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
+                android:text="€"
+                android:textSize="15sp"
+                android:textColor="@color/white"/>
+
+
+        </LinearLayout> <!-- BOTTOM FLAG END -->
+
+    </LinearLayout> <!-- TOP LAYOUT END -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/loading"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="40dp"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="false"
+            android:id="@+id/loading_start"/>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/loading_start"
+            android:layout_marginTop="-3dp"
+            android:orientation="vertical"
+            android:background="@color/white">
+            <!-- TOP ROW -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@color/clear"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="1"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:background="@color/clear"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/btn_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="2"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:background="@color/clear"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/btn_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="3"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:background="@color/clear"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+            </LinearLayout> <!-- TOP ROW END -->
+
+            <!-- MIDDLE ROW -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@color/clear"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="4"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:background="@color/clear"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/btn_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="5"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:background="@color/clear"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/btn_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="6"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:background="@color/clear"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+            </LinearLayout> <!-- MIDDLE ROW END -->
+            <!-- BOTTOM ROW -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@color/clear"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="7"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:background="@color/clear"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/btn_8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="8"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:background="@color/clear"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/btn_9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="9"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:background="@color/clear"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+            </LinearLayout> <!-- BOTTOM ROW END-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="@color/clear"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/btn_point"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="."
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="25sp"
+                    android:background="@color/clear"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/btn_0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="0"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="25sp"
+                    android:background="@color/clear"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/btn_Cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="C"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="25sp"
+                    android:background="@color/clear"
+                    android:gravity="center"
+                    android:layout_weight="1"/>
+
+            </LinearLayout> <!-- BOTTOM ROW END-->
 
         </LinearLayout>
 
-
-    </LinearLayout>
+    </RelativeLayout>
 
 
 
