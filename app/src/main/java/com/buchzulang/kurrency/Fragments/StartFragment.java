@@ -66,6 +66,7 @@ public class StartFragment extends Fragment {
     }
 
 
+    //Background Request to Download all Currency Values.
     private void downloadCurrencyData(){
         if (ActivityCompat.checkSelfPermission( MainActivity.getMainActivity().getApplicationContext(),
                                                 Manifest.permission.INTERNET) == PackageManager.PERMISSION_GRANTED){
@@ -74,6 +75,7 @@ public class StartFragment extends Fragment {
             ActivityCompat.requestPermissions(MainActivity.getMainActivity(),new  String[] {Manifest.permission.INTERNET}, REQ_CODE_INTERNET);
         }
     }
+
 
 
     @Override

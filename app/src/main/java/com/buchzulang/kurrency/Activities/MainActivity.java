@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.buchzulang.kurrency.Fragments.OperationFragment;
 import com.buchzulang.kurrency.Fragments.StartFragment;
 import com.buchzulang.kurrency.R;
 import com.buchzulang.kurrency.Tools.CurrencyModel;
@@ -42,7 +43,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadOperationScreen(){
-        Toast.makeText(mainActivity, "Hello", Toast.LENGTH_SHORT).show();
-        //getSupportFragmentManager().beginTransaction().replace(R.id.container_main,)
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.container_main,OperationFragment.newInstance())
+                .addToBackStack(null)
+                .commit();
     }
 }

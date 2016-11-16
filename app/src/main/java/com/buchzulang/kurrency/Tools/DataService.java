@@ -45,8 +45,34 @@ public class DataService {
                     cur.setBRL(rates.getDouble("BRL"));
                     cur.setCAD(rates.getDouble("CAD"));
                     cur.setCHF(rates.getDouble("CHF"));
+                    cur.setCNY(rates.getDouble("CNY"));
+                    cur.setCZK(rates.getDouble("CZK"));
+                    cur.setDKK(rates.getDouble("DKK"));
+                    cur.setGBP(rates.getDouble("GBP"));
+                    cur.setHKD(rates.getDouble("HKD"));
+                    cur.setHRK(rates.getDouble("HRK"));
+                    cur.setHUF(rates.getDouble("HUF"));
+                    cur.setIDR(rates.getDouble("IDR"));
+                    cur.setILS(rates.getDouble("ILS"));
+                    cur.setINR(rates.getDouble("INR"));
+                    cur.setJPY(rates.getDouble("JPY"));
+                    cur.setKRW(rates.getDouble("KRW"));
+                    cur.setMXN(rates.getDouble("MXN"));
+                    cur.setMYR(rates.getDouble("MYR"));
+                    cur.setNOK(rates.getDouble("NOK"));
+                    cur.setNZD(rates.getDouble("NZD"));
+                    cur.setPHP(rates.getDouble("PHP"));
+                    cur.setPLN(rates.getDouble("PLN"));
+                    cur.setRON(rates.getDouble("RON"));
+                    cur.setRUB(rates.getDouble("RUB"));
+                    cur.setSEK(rates.getDouble("SEK"));
+                    cur.setSGD(rates.getDouble("SGD"));
+                    cur.setTHB(rates.getDouble("THB"));
+                    cur.setTRY(rates.getDouble("TRY"));
+                    cur.setUSD(rates.getDouble("USD"));
+                    cur.setZAR(rates.getDouble("ZAR"));
 
-
+                    System.out.println(cur.getBGN());
 
                 } catch (JSONException e) {
                     System.out.println(e.getLocalizedMessage());
