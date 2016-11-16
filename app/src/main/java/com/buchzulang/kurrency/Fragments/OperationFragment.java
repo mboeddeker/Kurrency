@@ -105,6 +105,8 @@ public class OperationFragment extends Fragment {
 
         //UI LISTENER
         setUiListeners();
+
+        numberString = "0";
     }
 
     private void setUiListeners(){
@@ -198,6 +200,12 @@ public class OperationFragment extends Fragment {
 
             }
         });
+    }
+
+    private void addText(String sign){
+        if (numberString.equals("0")){
+            num
+        }
     }
 
 
